@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College Portal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(to bottom, rgba(11, 37, 69, 0.9), rgba(11, 37, 69, 0.95));
+      padding: 18px 0;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .navbar-brand {
+      font-size: 30px;
+      font-weight: 700;
+      color: white;
+    }
+
+    .navbar-brand span {
+      color: #00bcd4;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #ffffff !important;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 10px 18px;
+      margin-right: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #00bcd4 !important;
+      transform: scale(1.05);
+    }
+
+    .btn-signup {
+      background-color: #00bcd4;
+      color: white;
+      border-radius: 999px;
+      font-size: 16px;
+      padding: 8px 25px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-signup:hover {
+      background-color: #0097a7;
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    /* Welcome Section */
+    .welcome-section {
+      text-align: center;
+      padding: 120px 20px 70px;
+      background-color: #e3f2fd;
+      animation: fadeInUp 2s ease forwards;
+    }
+
+    .welcome-section h1 {
+      font-size: 48px;
+      font-weight: 700;
+      color: #0b2545;
+      animation: popUp 1s ease-out;
+    }
+
+    .welcome-section p {
+      font-size: 20px;
+      color: #333;
+      margin-top: 10px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes popUp {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Recruiter Section */
+    .recruiter-section {
+      background-color: #f1f1f1;
+      padding: 40px 0 30px;
+    }
+
+    .recruiter-section h3 {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 600;
+      color: #0b2545;
+      margin-bottom: 25px;
+    }
+
+    .recruiter-carousel {
+      display: flex;
+      align-items: center;
+      animation: slide 25s linear infinite;
+      white-space: nowrap;
+    }
+
+    .recruiter-carousel span {
+      margin-right: 40px;
+      color: #333;
+      font-size: 32px;
+      transition: transform 0.3s;
+    }
+
+    .recruiter-carousel span:hover {
+      transform: scale(1.2);
+      color: #00bcd4;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* About Us Section */
+    #about {
+      opacity: 0;
+      animation: fadeIn 1s forwards;
+    }
+
+    .counter {
+      font-size: 48px;
+      font-weight: bold;
+      color: #0b2545;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">COLLEGE<span>.ORG</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav align-items-center">
+          <li class="nav-item">
+            <a class="nav-link" href="#">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faculty.jsp">FACULTY Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Student Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-signup ms-2" href="student.jsp">APPLY NOW</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section class="welcome-section mt-5 pt-5">
+    <div class="container">
+      <h1>Welcome to Your Digital College</h1>
+      <p>Empowering students and educators with the tools to succeed.</p>
+    </div>
+  </section>
+
+  <!-- Recruiter Section -->
+  <!-- Recruiter Section -->
+<section class="recruiter-section">
+  <div class="container">
+    <h3 style="font-size: 32px;">Our Recruiters</h3>
+    <div class="recruiter-carousel">
+      <span><i class="fab fa-youtube" title="YouTube" style="font-size: 44px;"></i></span>
+      <span><i class="fab fa-instagram" title="Instagram" style="font-size: 44px;"></i></span>
+      <span><i class="fab fa-facebook" title="Facebook" style="font-size: 44px;"></i></span>
+      <span><i class="fab fa-meta" title="Meta" style="font-size: 44px;"></i></span>
+      <span><i class="fas fa-brain" title="OpenAI" style="font-size: 44px;"></i></span>
+    </div>
+  </div>
+</section>
+
+
+  <!-- About Us / Stats Section -->
+  <section id="about" class="py-5 bg-light">
+    <div class="container text-center">
+      <h2 class="mb-4 fw-bold text-primary">About Us</h2>
+      <p class="mb-5 text-muted">We are committed to delivering excellence in education, research, and innovation to empower students across the nation.</p>
+      
+      <div class="row g-4">
+        <div class="col-md-3">
+          <h1 class="counter" data-target="5000">0</h1>
+          <p class="text-muted">Students Enrolled</p>
+        </div>
+        <div class="col-md-3">
+          <h1 class="counter" data-target="120">0</h1>
+          <p class="text-muted">Faculty Members</p>
+        </div>
+        <div class="col-md-3">
+          <h1 class="counter" data-target="95">0</h1>
+          <p class="text-muted">Placement Rate (%)</p>
+        </div>
+        <div class="col-md-3">
+          <h1 class="counter" data-target="30">0</h1>
+          <p class="text-muted">Courses Offered</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Counter Script -->
+  <script>
+    const counters = document.querySelectorAll('.counter');
+    counters.forEach(counter => {
+      counter.innerText = '0';
+      const updateCounter = () => {
+        const target = +counter.getAttribute('data-target');
+        const current = +counter.innerText;
+        const increment = target / 100;
+  
+        if (current < target) {
+          counter.innerText = `${Math.ceil(current + increment)}`;
+          setTimeout(updateCounter, 30);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCounter();
+    });
+  </script>
+  
+</body>
+</html>
